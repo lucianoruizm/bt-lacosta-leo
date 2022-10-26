@@ -710,7 +710,7 @@ nav {
 }
 
 .form-body {
-  margin: 30px 50px 20px;
+  margin: 30px auto 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -719,10 +719,8 @@ nav {
 
 .input-container {
   display: flex;
-  flex-direction: column;
-  width: 100%;
   gap: 5px;
-  align-items: stretch;
+  align-items: baseline;
 }
 
 .span {
@@ -732,7 +730,7 @@ nav {
 }
 
 .btnn {
-  width: 100%;
+  width: 70%;
   height: 50px;
   background-color: rgba(0, 107, 168, 0.8);
   border-radius: 3px;
@@ -746,19 +744,18 @@ nav {
 .login-p {
   font-size: 15px;
   text-align: center;
-  margin: 5px 0;
+  margin: 5px 20px 20px;
   padding: 0;
 }
 
 .btn-2 {
-  width: 100%;
+  width: 70%;
   height: 50px;
   background-color: #001f74;
   border-radius: 3px;
   color: #ffffff;
-  margin-top: 10px;
 }
 
 .btn-2:hover {
   cursor: pointer;
-}
+}/*# sourceMappingURL=estilos.css.map */

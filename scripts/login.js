@@ -5,7 +5,7 @@ let formLogin = document.getElementById("formLogin");
 const userData = JSON.parse(localStorage.getItem("userData")) || [];
 
 // VARIABLE QUE ALMACENA LOS INTENTOS DE INICIO DE SESIÓN
-let intentos = 0;
+let intentos = 3;
 
 // FUNCION VALIDACIÓN DE DATOS PARA EL INICIO DE SESIÓN
 function validateLogin() {
@@ -22,16 +22,30 @@ function validateLogin() {
 	const hayDatosInvalidos = (password, emailUser) => password != pass || emailUser != email;
 
     if (!hayDatosInvalidos(ingresePass, ingreseEmail)) {
+        Swal.fire('Any fool can use a computer');
     	console.log('Inicio de sesión exitoso');
     } else {
-    	console.log('Email o password erroneos');
-        if(intentos === 3){
-            console.log('Se han acabado los intentos de inicio de sesión, vuelva mas tarde');
+
+        Swal.fire(
+            'The Internet?',
+            `Te quedan: ${intentos-1} ${intentos === 2 ?  'intento' : 'intentos'}`,
+            'question'
+        )
+        console.log('Email o password erroneos');
+    	
+        if(intentos === 1){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+            })
+            console.log('Se acabaron los intentos');
             // GET POR ID DEL BUTTON 'LOGIN' DEL FORMULARIO DE INICIO DE SESIÓN, QUE SE DESHABILITA
             // UNA VEZ QUE EL USUARIO AGOTA LOS INTENTOS DE INICIO DE SESIÓN.
             document.getElementById('btnInputLogin').disabled = 'true';
         }
-        intentos++;
+        intentos--;
     }
 }
 
