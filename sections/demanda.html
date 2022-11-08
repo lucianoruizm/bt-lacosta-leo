@@ -22,7 +22,6 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -38,44 +37,22 @@
             </div>
           </nav>
     </header>
-    
-    
-
     <section class="demandaColor">
         <article>
           <h2 class="tituloOferta">Realiza una publicacion:</h2>
-            <form action="#" id="formulario2">
-            <label  for="Adjuntar imagen"></label>Adjuntar imagen:
-            <input class="input-boton" type="file"> <br>
-            <br>
-            <label for="Texto del mensaje"> Descripcion*: <br>
-            <textarea class="input-text" type="Texto del mensaje" name="Texto del mensaje" id="descripcion"></textarea> <br>
-            <br>
-            <input class="input-boton" type="submit" value="Publicar"><br> 
-            <br>
-            <h5>*campo obligatorio</h5><br>
-        </form>
-
+            <form action="#" id="formulario2" class="form-input-publicaciones">
+              <label for="Adjuntar imagen">Adjuntar imagen:</label>
+              <input id="inputFile" class="file-btn" type="file">
+              <label for="Texto del mensaje">Descripcion*:</label> 
+              <textarea class="input-text area" type="Texto del mensaje" name="Texto del mensaje" id="descripcion"></textarea>
+              <input class="input-boton" type="submit" value="Publicar"> 
+              <strong>*campo obligatorio</strong>
+            </form>
         </article>
-        <br>
     </section>
     <div class="anuncios">
       <h5>Publicaciones recientes y destacadas</h5>
       <div class="listOferta">
-        <div class="ofertaP">
-          <p class="text-oferta">
-          Hola me llamo geremias tengo 21 años, ando buscando trabajo de lo que sea, ayudante de pintor, lavadero, bachero, mozo, ayudante de cocina, casero, limpieza, cuidado de personas mayores.
-          Soy de mar del tuyu, desde ya muchísimas gracias.
-        </p>
-        </div>
-        <div class="ofertaP">
-          <p class="text-oferta">
-            Hola disculpen el horario alguien sabe donde puedo llevar cv ,soy de santa teresita. Agradezco cualquier informacion
-        </p>
-        </div>
-        <div class="ofertaP">
-          <img class="ofertaImg" src="../img/demanda2.jpg" alt="">
-        </div>
         <div class="ofertaP">
           <img class="ofertaImg" src="../img/demanda3.jpg" alt="">
         </div>
@@ -87,7 +64,6 @@
         </div>
       </div>
     </div>
-  
     <footer class="redes">
         <div>
             <img class="red" src="../img/logo3.png" alt="logo busco trabajo la costa">
@@ -95,8 +71,7 @@
             <img class="red" src="../img/ig.svg" alt="instagram">
             <img class="red" src="../img/tw.svg" alt="twiter">
         </div>
-    
-       </footer>
+    </footer>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
        <script src="../scripts/demanda.js"></script>
        <script src="sweetalert2.all.min.js"></script>

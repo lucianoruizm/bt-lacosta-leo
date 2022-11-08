@@ -1,0 +1,8 @@
+[
+    {"puesto": "ayudante", "localidad": "San Bernardo", "nombreDelLugar":"SubUrban", "direccion":"AV. 159 33", "descripcion":"Buscan cajero o cajera en tienda de ropa"},
+    {"puesto": "ayudante", "localidad": "Mar de Ajó", "nombreDelLugar":"Resto MDA", "direccion":"AV. 456 66", "descripcion":"asdasdasd"},
+    {"puesto": "ayudante", "localidad": "Santa Teresita", "nombreDelLugar":"Pizzeria MDA", "direccion":"Chascomus 4989", "descripcion":"adasdasd"},
+    {"puesto": "panadero", "localidad": "San Clemente", "nombreDelLugar":"Parador 11", "direccion":"Ruta 11", "descripcion":"asdasdsa"},
+    {"puesto": "panadero", "localidad": "Costa Azul", "nombreDelLugar":"Pan Azul", "direccion":"Calle 465", "descripcion":"asdasdasdd"},
+    {"puesto": "panadero", "localidad": "La Lucila", "nombreDelLugar":"Lucila", "direccion":"Calle 995", "descripcion":"afsgsdgd"}
+]

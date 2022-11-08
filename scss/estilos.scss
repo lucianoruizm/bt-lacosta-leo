@@ -50,8 +50,6 @@ ul li:hover{
     color: whitesmoke;
 }
 
-
-
 nav ul{
     display: flex;
     flex-direction: row;
@@ -85,7 +83,7 @@ h3{
     font-size: 20px;
     font-style: normal;
     font-weight: bolder;
-    margin-bottom: 50px;   
+    margin: 50px;   
 }
 
 h4{
@@ -122,14 +120,11 @@ footer{
     background-color: black;
 }
 
-
-
 main h1 {
     margin-top: 50px;
     text-align: center;
     font-size: 3em;
 }
-
 
 .carousel-container{
     margin-top: 45px;
@@ -171,12 +166,18 @@ main h1 {
 }
 
 .container-img-list{
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: #1d1927;
-    padding: 30px 0 20px;
-    margin-bottom: 50px;
+    padding: 30px;
+    margin: auto;
+    color: white;
 }
-
+.container-img-list h2{
+    color: white;
+    margin-bottom: 20px;
+}
 .container-img-list li{
     margin-top: 30px;
     color: #f1f1f1;
@@ -184,7 +185,6 @@ main h1 {
     list-style:none;
     margin: 5px;
     padding: 10px;
-    
 }
 
 .info h3{
@@ -286,15 +286,30 @@ background-color: #c4d4ff;
 }
 
 .input-text{
-border-radius: 8px;
-background-color: rgba(228, 228, 228, 0.897);
-color:black;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(228, 228, 228, 0.897);
+  color:black;
+}
+.area{
+    height: 90px;
 }
 
 .input-boton{
+    padding: 5px 0;
     background-color: black;
     color: white;
+    cursor: pointer;
 }
+.input-boton:hover{
+    background-color: #24202ce1;
+}
+.file-btn{
+    border-radius: 5px;
+}
+
 textarea{
     resize: none;
     width: 300px;
@@ -363,24 +378,16 @@ nav{
 }
 
 .textOferta{
-
     margin: 10px;
-   
 }
 // CIERRE SECCIÓN GALERIA
 
-// SECCIÓN DEMANDA
 
-
+// SECCIÓN PUBLICACIONES DEMANDA Y OFERTA
 .demandaColor{
 
     background-color: #0049b8;
     color: white;
-
-}
-.demandaColor article{
-
-    margin-left: 10px;
 
 }
 
@@ -391,10 +398,7 @@ nav{
     align-items: center;
     
 }
-// CIERRE SECCIÓN DEMANDA
 
-
-// SECCIÓN OFERTA
 .publicar{
 
     
@@ -414,6 +418,8 @@ nav{
 }
 
 .listOferta{
+    display: flex;
+    flex-direction: column-reverse;
     position: relative;
     width: 100%;
 }
@@ -470,34 +476,47 @@ nav{
 .text-oferta span{
     font-size: 15px;
 }
+
 .tituloOferta{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  color: white;
+}
 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bolder;
-    color: white;
-    }
-    
-    .tituloOferta2{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bolder;
-    color:white;
-   
-    }
-    
-    .marginLeft{
+.tituloOferta2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  color:white;
+}
 
-    margin-left:10px;
-    }
+.form-input-publicaciones{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  padding: 30px 0;
+  gap: 10px;
+}
 
-    @media (min-width: 500px) {
-        .text-oferta{
-            margin: 20px;
-            font-size: 18px;
-        }
-        .text-oferta span{
-            font-size: 21px;
-        }
+.busqueda{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+.barra{
+    width: 50%;
+}
+
+@media (min-width: 500px) {
+    .text-oferta{
+        margin: 20px;
+        font-size: 18px;
     }
+    .text-oferta span{
+        font-size: 21px;
+    }
+}
 
 @media (min-width: 768px) {
     .text-oferta{
@@ -514,7 +533,7 @@ nav{
         margin: auto 100px;
     }
 }
-// CIERRE SECCIÓN OFERTA
+// CIERRE SECCIÓN PUBLICACIONES DEMANDA Y OFERTA
 
 
 // SECCIÓN CONTACTO

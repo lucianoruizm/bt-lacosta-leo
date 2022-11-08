@@ -7,25 +7,12 @@ class Publicacion {
      this.descripcion = descripcion;
     }
 }
+
+// GET ITEMS DEL LOCALSTORAGE
 const listaPublicacion = JSON.parse(localStorage.getItem("publicacion")) || [];
 
-// const listaPublicacion = [ 
-//     {id:1,
-//      localidad: 'San Bernardo', 
-//      nombreDelLugar:'Barbaros ',
-//      direccion: 'Av.San Bernardo 200',
-//      descripcion:'Se busca ayudante de cocina y camarera',
-//     },
-//     {
-//     id:2, 
-//     localidad: 'Mar de ajo', 
-//     nombreDelLugar:'Pimenton',
-//     direccion: 'Hipolito Yrigoyen 51',
-//     descripcion:'Se necesito mozo/camarera con experiencia',   
-//     }
-// ];
 
-
+// FUNCIONES
 const crearPublicacion = (publicacion) => {
 
     let contenedorPublicacion = document.createElement("div");
@@ -41,6 +28,16 @@ const crearPublicacion = (publicacion) => {
                                  `;
     document.querySelector(".listOferta").append(contenedorPublicacion);
 }
+
+const crearLocalidad = (localidad) => {
+
+    let option = document.createElement("option");
+        option.innerHTML = `
+                              ${localidad.localidad}
+                                     `;
+        document.querySelector("#localidad").append(option);
+}
+
 
 // Display publicaciones en el documento
 listaPublicacion.forEach((publicacion) => crearPublicacion(publicacion));
@@ -73,8 +70,7 @@ publicar.addEventListener("submit", (e)=>{
     console.log(listaPublicacion)
 })
 
-// Buscador
-
+// BUSCADOR
 document.querySelector('#botonBuscador').addEventListener('click', 
 function searchPost(e){
     e.preventDefault();
@@ -106,7 +102,7 @@ function searchPost(e){
     
 })
 
-
+// FETCH
 fetch("../publicacionesOferta.json")
     .then(response => response.json())
     .then(result => {
@@ -114,9 +110,7 @@ fetch("../publicacionesOferta.json")
         datos.forEach(dato => {
             crearPublicacion(dato)
         })
-    })
-
-
+})
 
 fetch("../localidades.json")
 .then(response => response.json())
@@ -126,14 +120,3 @@ fetch("../localidades.json")
         crearLocalidad(dato)
     })
 })
-
-{/* <option value="Costa Esmeralda">Costa Esmeralda</option> */}
-
-const crearLocalidad = (localidad) => {
-
-    let option = document.createElement("option");
-        option.innerHTML = `
-                              ${localidad.localidad}
-                                     `;
-        document.querySelector("#localidad").append(option);
-}

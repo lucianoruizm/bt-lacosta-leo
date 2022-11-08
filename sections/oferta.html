@@ -37,55 +37,34 @@
           </div>
         </nav>
   </header>
-
   <div class="publicar">
-    <h2 class="tituloOferta">Realiza una publicacion:</h2>
-    
-   <div class="marginLeft">
-    <h4 class="tituloOferta2">Localidad:</h4>
-    <form action="#" id="formulario">
-        <label  for="Localidad"></label>
-        <select class="input-text" name="Localidad" id="localidad"> 
-           <option value="Costa Esmeralda">Costa Esmeralda</option>
-           <option value="Pinar del Sol - Villa Robles">Pinar del Sol - Villa Robles</option>
-           <option value="San Clemente del Tuyú">San Clemente del Tuyú</option>
-           <option value="Las Toninas">Las Toninas</option>
-           <option value="Santa Teresita">Santa Teresita</option>
-           <option value="Mar del Tuyú">Mar del Tuyú</option>
-           <option value="Costa del Este">Costa del Este</option>
-           <option value="Aguas Verdes">Aguas Verdes</option>
-           <option value="La Lucila del Mar">La Lucila del Mar</option>
-           <option value="Costa Azul">Costa Azul</option>
-           <option value="San Bernardo">San Bernardo</option>
-           <option value="Mar de Ajó">Mar de Ajó</option>
-           <option value="Nueva Atlantis">Nueva Atlantis</option>
-        </select>
-        <br>
-        <label  for="Nombre del lugar"></label>
-         Nombre del lugar*:
-        <input class="input-text" id="nombreDelLugar" type="text" name="Direccion"><br>
-        <br>
-        <label for="Direccion"></label>
-         Direccion:
-        <input class="input-text" id="direccion" type="text" name="Direccion"><br>
-        <br>
-        <label for="Adjuntar imagen"></label>Adjuntar imagen:
-        <input class="input-boton" type="file"><br>
-        <br>
-        <h5>*campo obligatorio</h5><br>
-        <label for="Texto del mensaje"> Descripcion*:<br>
-        <textarea class="input-text" id="descripcion" type="Texto del mensaje" name="Texto del mensaje"></textarea><br>
-        <input class="input-boton"  type="submit" value="Publicar"><br> <br>
-        <label for="Palabra clave"></label>
-    </form>
+   <h2 class="tituloOferta">Realiza una publicacion:</h2>
+   <div>
+      <form action="#" id="formulario" class="form-input-publicaciones">
+          <label for="Localidad">Localidad:</label>
+          <select class="input-text" name="Localidad" id="localidad"> 
+          </select>
+          <label  for="Puesto">Puesto:</label>
+          <input class="input-text" id="puesto" type="text" name="Puesto">
+          <label  for="Nombre del lugar">Nombre del lugar*:</label>
+          <input class="input-text" id="nombreDelLugar" type="text" name="NombreDelLugar">
+          <label for="Direccion">Direccion:</label>
+          <input class="input-text" id="direccion" type="text" name="Direccion">
+          <label for="Adjuntar imagen">Adjuntar imagen:</label>
+          <input id="inputFile" class="file-btn" type="file">
+          <label for="Texto del mensaje">Descripcion*:</label>
+          <textarea class="input-text area" id="descripcion" type="Texto del mensaje" name="Texto del mensaje"></textarea>
+          <input class="input-boton" type="submit" value="Publicar">
+          <strong>*campo obligatorio</strong>
+      </form>
     </div>
   </div>
   <div>
     <form action="#" id="buscador">
-        <p class="busqueda"> Realiza tu busqueda:
+        <div class="busqueda"> Realiza tu busqueda:
           <input type="search" id="buscarPalabra" name="Palabra clave" placeholder="Palabra clave"> 
           <label  for="Localidad"></label>
-          <select class="input-text" name="Localidad" id="buscarLocalidad"> 
+          <select class="input-text barra" name="Localidad" id="buscarLocalidad"> 
           <option value=""></option>
            <option value="Costa Esmeralda">Costa Esmeralda</option>
            <option value="Pinar del Sol - Villa Robles">Pinar del Sol - Villa Robles</option>
@@ -101,12 +80,10 @@
            <option value="Mar de Ajó">Mar de Ajó</option>
            <option value="Nueva Atlantis">Nueva Atlantis</option>
         </select>
-        <input class="input-boton" id="botonBuscador"  type="submit" value="Buscar"><br> <br>
-          <!-- <input type="search" id="buscarLocalidad" name="Localidad" placeholder="Localidad"> <input type="submit" value="Buscar">  -->
-        </p> 
+        <input class="input-boton" id="botonBuscador"  type="submit" value="Buscar"><br>
+      </div> 
     </form>
   </div>
-
   <div class="anuncios">
     <h5>Publicaciones recientes y destacadas</h5>
     <div class="listOferta">
@@ -158,8 +135,6 @@
       </div>
     </div>
   </div>
-
-
   <footer class="redes">
       <div>
           <img class="red" src="../img/logo3.png" alt="logo busco trabajo la costa">
