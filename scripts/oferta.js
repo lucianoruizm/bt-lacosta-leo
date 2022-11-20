@@ -38,6 +38,13 @@ const crearLocalidad = (localidad) => {
         document.querySelector("#localidad").append(option);
 }
 
+const clearInput = () => {
+    //Select all the inputs
+    const inputs = document.querySelectorAll('.input-text');
+    // Clear the content of each input
+    inputs.forEach((input) => input.value = '');
+}
+
 
 // Display publicaciones en el documento
 listaPublicacion.forEach((publicacion) => crearPublicacion(publicacion));
@@ -58,6 +65,7 @@ publicar.addEventListener("submit", (e)=>{
     let nuevaPublicacion = new Publicacion(puesto, localidad, nombreDelLugar, direccion, descripcion);
     listaPublicacion.push(nuevaPublicacion);
     localStorage.setItem("publicacion", JSON.stringify(listaPublicacion));
+    clearInput();
 
     crearPublicacion(nuevaPublicacion);
     Toastify({
@@ -102,21 +110,27 @@ function searchPost(e){
     
 })
 
-// FETCH
-fetch("../publicacionesOferta.json")
-    .then(response => response.json())
-    .then(result => {
-        const datos = result;
-        datos.forEach(dato => {
-            crearPublicacion(dato)
-        })
-})
-
-fetch("../localidades.json")
-.then(response => response.json())
-.then(result => {
-    const datos = result;
-    datos.forEach(dato => {
-        crearLocalidad(dato)
+const pedirPosts =
+async () => {
+    const resp = await 
+    fetch("../publicacionesOferta.json")
+    const data = await resp.json()
+    
+    data.forEach(post => {
+        crearPublicacion(post)
     })
-})
+}
+
+pedirPosts();
+
+const pedirLocalidades = async () => {
+    const resp = await 
+    fetch("../localidades.json")
+    const data = await resp.json()
+    
+    data.forEach(localidad => {
+        crearLocalidad(localidad)
+    })
+}
+
+pedirLocalidades();

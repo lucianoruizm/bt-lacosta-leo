@@ -47,7 +47,7 @@
           <label  for="Puesto">Puesto:</label>
           <input class="input-text" id="puesto" type="text" name="Puesto">
           <label  for="Nombre del lugar">Nombre del lugar*:</label>
-          <input class="input-text" id="nombreDelLugar" type="text" name="NombreDelLugar">
+          <input required class="input-text" id="nombreDelLugar" type="text" name="NombreDelLugar">
           <label for="Direccion">Direccion:</label>
           <input class="input-text" id="direccion" type="text" name="Direccion">
           <label for="Adjuntar imagen">Adjuntar imagen:</label>
@@ -62,9 +62,9 @@
   <div>
     <form action="#" id="buscador">
         <div class="busqueda"> Realiza tu busqueda:
-          <input type="search" id="buscarPalabra" name="Palabra clave" placeholder="Palabra clave"> 
+          <input type="search" id="buscarPalabra" name="input" placeholder="Palabra clave"> 
           <label  for="Localidad"></label>
-          <select class="input-text barra" name="Localidad" id="buscarLocalidad"> 
+          <select class="input-text barra" name="input" id="buscarLocalidad"> 
           <option value=""></option>
            <option value="Costa Esmeralda">Costa Esmeralda</option>
            <option value="Pinar del Sol - Villa Robles">Pinar del Sol - Villa Robles</option>
@@ -145,7 +145,6 @@
   </footer>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
      <script src="../scripts/oferta.js"></script>
-     <script src="sweetalert2.all.min.js"></script>
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

@@ -1,29 +1,33 @@
 class PublicacionDemanda {
-    constructor(descripcion, imagen){
+    constructor(descripcion){
      this.descripcion = descripcion;
-     this.imagen = imagen;
     }
 }
-
 const listaPublicacionDemanda = JSON.parse(localStorage.getItem("publicacionDemanda")) || [];
 
+// getUserAsync()
+
 const crearPublicacionDemanda = (publicacionDemanda)=> {
+
     let contenedorPublicacion = document.createElement("div");
     contenedorPublicacion.className = 'ofertaP';
     contenedorPublicacion.innerHTML = `
-                               
                                  <p class="text-oferta">
                                  ${publicacionDemanda.descripcion}
                                  </p>
-                                 <img id="img" class="ofertaImg" alt="img">
                                  `;
     document.querySelector(".listOferta").append(contenedorPublicacion);
+
+}
+
+const clearInput = () => {
+    //Select all the inputs
+    const inputs = document.querySelectorAll('.input-text');
+    // Clear the content of each input
+    inputs.forEach((input) => input.value = '');
 }
 
 listaPublicacionDemanda.forEach((publicacionDemanda) => crearPublicacionDemanda(publicacionDemanda));
-
-
-
 
 let publicar= document.querySelector("#formulario2")
 
@@ -32,25 +36,14 @@ publicar.addEventListener("submit", (e)=>{
     e.preventDefault();
 
     let descripcion = document.getElementById("descripcion").value;
-    // CARGAR IMAGENES
-    let imagen = document.getElementById('inputFile');
-    imagen.addEventListener('change', mostrarImagen, false);
-      
-    function mostrarImagen(event) {
-        let file = event.target.files[0];
-        let reader = new FileReader();
-        reader.onload = function(event) {
-          let img = document.getElementById('img');
-          img.src= event.target.result;
-        }
-        reader.readAsDataURL(file);
-    }
 
-    let nuevaPublicacion = new PublicacionDemanda(descripcion, imagen);
+    let nuevaPublicacion = new PublicacionDemanda(descripcion);
     listaPublicacionDemanda.push(nuevaPublicacion);
     localStorage.setItem("publicacionDemanda", JSON.stringify(listaPublicacionDemanda));
+    clearInput();
 
     crearPublicacionDemanda(nuevaPublicacion);
+
     Toastify({
 
         text: "Publicacion realizada",
@@ -58,15 +51,19 @@ publicar.addEventListener("submit", (e)=>{
         duration: 5000
         
         }).showToast();
+
     console.log(listaPublicacionDemanda)
 })
 
-// FETCH
-fetch("../publicacionesDemanda.json")
-    .then(response => response.json())
-    .then(result => {
-        const datos = result;
-        datos.forEach(dato => {
-            crearPublicacionDemanda(dato)
-        })
-})
+const pedirPosts =
+async () => {
+    const resp = await 
+    fetch("../publicacionesDemanda.json")
+    const data = await resp.json()
+    
+    data.forEach(post => {
+        crearPublicacionDemanda(post)
+    })
+}
+
+pedirPosts();
